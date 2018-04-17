@@ -1,0 +1,49 @@
+@include body-class {
+
+	.sui-header {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		position: relative;
+		line-height: 1;
+		margin-bottom: $sui-gutter;
+		h1 {
+			text-transform: uppercase;
+			@include media( max-width, md ) {
+				width: 100%;
+			}
+		}
+		@include media( max-width, md ) {
+			margin-bottom: $sui-gutter-md;
+		}
+
+		.sui-actions-right {
+			@include media( max-width, md ) {
+				margin-left: 0;
+				margin-right: auto;
+				margin-top: 10px;
+			}
+		}
+
+		.sui-actions-left{
+			@include media( max-width, md ) {
+				margin-left: 0;
+				margin-right: 0;
+				margin-top: 10px;
+			}
+		}
+
+	}
+
+	.sui-header-title {
+		color: $headings-color;
+		margin: 0;
+		text-align: left;
+		text-transform: uppercase;
+		font-weight: bold;
+		max-width: none;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+}

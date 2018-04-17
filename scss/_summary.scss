@@ -1,0 +1,136 @@
+@include body-class {
+
+	.sui-summary {
+		padding: 15px 30px 0;
+		background-image: url($summary-image-default-url);
+		background-repeat: no-repeat;
+		background-position: $summary-image-default-position;
+		background-size: $summary-image-default-width $summary-image-default-height;
+		@include media( max-width, md ) {
+			padding: $sui-gutter-md $sui-gutter-md 10px;
+		}
+
+		@media( max-width: 1100px ){
+			background-image: none !important;
+		}
+
+		.sui-summary-image-space {
+			width: 100%;
+			min-height: $summary-image-default-height;
+			float: left;
+			max-width: $summary-image-default-width;
+
+			@media( max-width: 1100px ){
+				display: none !important;
+			}
+		}
+
+		.sui-summary-segment {
+			position: relative;
+			color: #333333;
+			width: calc(100% / 2 - 98px);
+			padding-left: 5%;
+			display: inline-block;
+			vertical-align: middle;
+
+			.sui-summary-details {
+				position: absolute;
+				top: -5px;
+				transform: translateY(-50%);
+				min-height: 80px;
+
+				@media( max-width: 600px ){
+					position: inherit;
+					top: 0;
+					transform: translateY(0);
+				}
+
+				.sui-summary-sub {
+					display: block;
+					font-size: 13px;
+					margin-top: 0;
+					margin-bottom: 20px;
+					line-height: 22px;
+					color: $list-summary-small-color;
+
+					&:last-of-type {
+						margin-bottom: 0;
+					}
+
+					@media ( max-width: 960px ) {
+						margin-bottom: 5px;
+					}
+				}
+
+				.sui-summary-percent {
+					font-size: 13px;
+					line-height: 22px;
+					margin-left: -5px;
+				}
+
+				i {
+					position: relative;
+					top: -22px;
+					left: 5px;
+					font-size: 16px;
+
+					+ .sui-summary-percent {
+						margin-left: -20px;
+
+					}
+					&.sui-warning,
+					&.sui-info,
+					&.sui-error,
+					&.sui-success {
+						&:before {
+							color: inherit;
+						}
+					}
+
+				}
+
+				.sui-summary-large {
+					font-size: 50px;
+					line-height: 55px;
+					margin-bottom: 20px;
+				}
+
+
+			}
+
+			@media( max-width: 1100px ){
+				text-align: left;
+				padding-left: 0;
+				width: 49%;
+			}
+
+			@media( max-width: 600px ){
+				display: block;
+				text-align: center;
+				width: 100%;
+			}
+
+			.sui-list {
+				margin: 0 0 15px;
+
+				@media( max-width: 783px ){
+					margin: 0 0 10px;
+				}
+				@media( max-width: 600px ){
+					text-align: left;
+				}
+
+				.sui-list-detail {
+					font-size: 13px;
+					font-weight: 500;
+					line-height: 22px;
+					color: $list-summary-number-color;
+					i {
+						line-height: 0;
+						vertical-align: middle;
+					}
+				}
+			}
+		}
+	}
+}
